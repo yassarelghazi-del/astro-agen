@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+    { title: 'تطوير المواقع', description: 'نطور مواقع إلكترونية متكاملة، من صفحات الهبوط إلى الأنظمة المعقدة.', icon: '💻' },
+    { title: 'تطبيقات الهواتف', description: 'تطبيقات iOS و Android تعمل بكفاءة وسرعة.', icon: '📱' },
+    { title: 'التجارة الإلكترونية', description: 'متاجر إلكترونية متكاملة مع بوابات الدفع وإدارة المخزون.', icon: 'shopping_cart' },
+    { title: 'تحسين محركات البحث', description: 'نساعدك في الوصول إلى عملائك من خلال تحسين ظهورك في جوجل.', icon: 'search' },
+    { title: 'تصميم UI/UX', description: 'تصاميم جذابة وسهلة الاستخدام تضمن أفضل تجربة للمستخدم.', icon: 'palette' },
+    { title: 'الاستشارات التقنية', description: 'نقدم لك الخبرة والمشورة لاختيار أفضل الحلول التقنية لمشروعك.', icon: 'lightbulb' },
+];
+---
+
+<Layout title="خدماتنا | وكالة برمجة">
+    <Navbar />
+    
+    <main class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-16 text-gray-900">خدماتنا</h1>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map(service => (
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-6">{service.icon}</div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">{service.title}</h3>
+                        <p class="text-gray-600 leading-relaxed">{service.description}</p>
+                    </div>
+                ))}
+            </div>
+            
+            <div class="mt-20 text-center">
+                <h2 class="text-2xl font-bold mb-6">هل لديك فكرة مشروع؟</h2>
+                <a href="/contact" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">تواصل معنا</a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

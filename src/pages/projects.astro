@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Placeholder content
+const projects = [
+    { title: 'مشروع 1', category: 'Web', image: 'https://placehold.co/600x400' },
+    { title: 'مشروع 2', category: 'Mobile', image: 'https://placehold.co/600x400' },
+    { title: 'مشروع 3', category: 'Design', image: 'https://placehold.co/600x400' },
+    { title: 'مشروع 4', category: 'Web', image: 'https://placehold.co/600x400' },
+];
+---
+
+<Layout title="أعمالنا | وكالة برمجة">
+    <Navbar />
+    
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-16 text-gray-900">أعمالنا</h1>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                {projects.map(project => (
+                    <div class="group relative overflow-hidden rounded-2xl shadow-sm cursor-pointer">
+                        <img src={project.image} alt={project.title} class="w-full h-64 object-cover transition-transform group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <h3 class="text-white text-xl font-bold mb-2">{project.title}</h3>
+                            <p class="text-gray-300">{project.category}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

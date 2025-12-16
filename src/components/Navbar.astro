@@ -1,0 +1,38 @@
+---
+const links = [
+    { name: 'الرئيسية', href: '/' },
+    { name: 'خدماتنا', href: '/services' },
+    { name: 'أعمالنا', href: '/projects' },
+    { name: 'تواصل معنا', href: '/contact' },
+];
+---
+
+<header class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600 hover:to-blue-500 transition-all">
+            وكالة<span class="text-gray-800">برمجة</span>.
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-10">
+            {links.map(link => (
+                <a href={link.href} class="text-gray-600 hover:text-blue-600 font-medium text-[15px] transition-colors relative group">
+                    {link.name}
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+            ))}
+        </nav>
+
+        <!-- CTA Button -->
+        <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-2.5 rounded-full hover:bg-black transition-all hover:scale-105 hover:shadow-lg font-medium text-sm">
+            <span>ابدأ مشروعك</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>

@@ -1,0 +1,61 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-6 gap-12 mb-12">
+            <div class="md:col-span-2">
+                <a href="/" class="text-3xl font-bold text-white mb-6 inline-block">
+                    وكالة<span class="text-blue-500">برمجة</span>.
+                </a>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    نبتكر تجارب رقمية استثنائية تساعد الشركات على النمو والتميز في العصر الرقمي.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Social Placeholders -->
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-white">𝕏</a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-white">ln</a>
+                </div>
+            </div>
+            
+            <div></div> <!-- Spacer -->
+
+            <div>
+                <h3 class="font-bold text-white text-lg mb-6">الشركة</h3>
+                <ul class="space-y-4">
+                    <li><a href="/about" class="hover:text-blue-400 transition-colors">من نحن</a></li>
+                    <li><a href="/services" class="hover:text-blue-400 transition-colors">خدماتنا</a></li>
+                    <li><a href="/projects" class="hover:text-blue-400 transition-colors">أعمالنا</a></li>
+                    <li><a href="/blog" class="hover:text-blue-400 transition-colors">المدونة</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h3 class="font-bold text-white text-lg mb-6">تواصل معنا</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-500 mt-1">✉️</span>
+                        <span>contact@agency.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-500 mt-1">📱</span>
+                        <span dir="ltr">+966 50 000 0000</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-500 mt-1">📍</span>
+                        <span>الرياض، طريق الملك فهد، المملكة العربية السعودية</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+            <p>جميع الحقوق محفوظة © {currentYear} وكالة برمجة</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-white transition-colors">شروط الاستخدام</a>
+            </div>
+        </div>
+    </div>
+</footer>
