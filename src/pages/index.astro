@@ -1,131 +1,269 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 // Placeholder data - eventually fetching from Sanity
 const services = [
-    { title: 'تطوير المواقع', description: 'بناء مواقع سريعة ومتجاوبة باستخدام أحدث التقنيات.', icon: 'globe' },
-    { title: 'تطبيقات الجوال', description: 'تطبيقات أصلية وهجينة لنظامي iOS و Android.', icon: 'smartphone' },
-    { title: 'تصميم واجهة المستخدم', description: 'تصاميم عصرية تركز على تجربة المستخدم.', icon: 'pen-tool' },
+  {
+    title: "تطوير المواقع",
+    description: "بناء مواقع سريعة ومتجاوبة باستخدام أحدث التقنيات.",
+    icon: "globe",
+  },
+  {
+    title: "تطبيقات الجوال",
+    description: "تطبيقات أصلية وهجينة لنظامي iOS و Android.",
+    icon: "smartphone",
+  },
+  {
+    title: "تصميم واجهة المستخدم",
+    description: "تصاميم عصرية تركز على تجربة المستخدم.",
+    icon: "pen-tool",
+  },
 ];
 
 const projects = [
-    { title: 'متجر إلكتروني', image: 'https://placehold.co/600x400', category: 'تطوير ويب' },
-    { title: 'تطبيق توصيل', image: 'https://placehold.co/600x400', category: 'تطبيقات' },
-    { title: 'منصة تعليمية', image: 'https://placehold.co/600x400', category: 'تطوير ويب' },
+  {
+    title: "متجر إلكتروني",
+    image: "https://placehold.co/600x400",
+    category: "تطوير ويب",
+  },
+  {
+    title: "تطبيق توصيل",
+    image: "https://placehold.co/600x400",
+    category: "تطبيقات",
+  },
+  {
+    title: "منصة تعليمية",
+    image: "https://placehold.co/600x400",
+    category: "تطوير ويب",
+  },
 ];
 ---
 
 <Layout title="وكالة برمجة | حلول برمجية متكاملة">
-    <Navbar />
-    
-    <main>
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            <!-- Background Elements -->
-            <div class="absolute top-0 right-0 -z-10 w-full h-full bg-slate-50">
-                <div class="absolute top-0 right-0 right-[-10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob"></div>
-                <div class="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-purple-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 right-[20%] w-[500px] h-[500px] bg-indigo-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-4000"></div>
-            </div>
-            
-            <div class="container mx-auto px-6 relative z-10 text-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold mb-8 animate-fade-in-up">
-                    <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
-                    متاحين لاستقبال مشاريع جديدة
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight animate-fade-in-up animation-delay-100">
-                    نحول الأفكار إلى <br class="hidden md:block" />
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">تجارب رقمية مذهلة</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
-                    شريكك التقني لبناء حلول برمجية متطورة. نجمع بين الإبداع الفني والهندسة الدقيقة لتقديم منتجات تترك أثراً.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
-                    <a href="/contact" class="px-10 py-4 bg-gray-900 text-white rounded-full hover:bg-black transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/20 font-bold text-lg flex items-center justify-center gap-2 group">
-                        ناقش مشروعك
-                        <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    </a>
-                    <a href="/projects" class="px-10 py-4 bg-white text-gray-800 border border-gray-200 rounded-full hover:bg-gray-50 transition-all hover:border-gray-300 font-bold text-lg shadow-sm hover:shadow-md">
-                        استكشف أعمالنا
-                    </a>
-                </div>
-                
-                <!-- Trust Badges (Mock) -->
-                <div class="mt-20 pt-10 border-t border-gray-200/60 animate-fade-in-up animation-delay-400">
-                   <p class="text-sm text-gray-400 font-medium mb-6 uppercase tracking-widest">نعمل بأحدث التقنيات</p>
-                   <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                        <!-- Simple Text Logos for Tech Stack -->
-                        <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg> React</span>
-                        <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19.778h20L12 2zm0 3.778L18.889 17.556H5.111L12 5.778z"/></svg> Next.js</span>
-                        <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.5c-5.24 0-9.5-4.26-9.5-9.5S6.76 2.5 12 2.5 21.5 6.76 21.5 12 17.24 21.5 12 21.5z"/></svg> Sanity</span>
-                   </div>
-                </div>
-            </div>
-        </section>
+  <Navbar />
 
-        <!-- Services Section -- Redesigned Cards -->
-        <section class="py-32 bg-white relative">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">حلول تُناسب طموحك</h2>
-                    <p class="text-xl text-slate-500 max-w-2xl mx-auto">نركز على الجودة والأداء لتقديم منتجات تعيش طويلاً وتنمو مع أعمالك.</p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    {services.map(service => (
-                        <div class="group p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 border border-slate-100 hover:border-blue-100 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/50 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300 text-3xl border border-slate-100">
-                                    {service.icon === 'globe' && '🌐'}
-                                    {service.icon === 'smartphone' && '📱'}
-                                    {service.icon === 'pen-tool' && '✨'}
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-                                <p class="text-slate-600 leading-relaxed text-lg">
-                                    {service.description}
-                                </p>
-                                
-                                <div class="mt-8 pt-8 border-t border-slate-100 flex items-center text-blue-600 font-semibold group-hover:translate-x-1 transition-transform cursor-pointer">
-                                    <span>اعرف المزيد</span>
-                                    <svg class="w-4 h-4 mr-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute top-0 right-0 -z-10 w-full h-full bg-slate-50">
+        <div
+          class="absolute top-0 right-0 right-[-10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob"
+        >
+        </div>
+        <div
+          class="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-purple-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000"
+        >
+        </div>
+        <div
+          class="absolute -bottom-8 right-[20%] w-[500px] h-[500px] bg-indigo-400/20 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-4000"
+        >
+        </div>
+      </div>
 
-        <!-- CTA Section -->
-        <section class="py-24 relative overflow-hidden">
-             <div class="absolute inset-0 bg-blue-900">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900"></div>
-                <!-- Abstract patterns -->
-                <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 30px 30px;"></div>
-             </div>
-             
-            <div class="container mx-auto px-6 relative z-10 text-center">
-                <h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">هل لديك مشروع مميز؟</h2>
-                <p class="text-blue-100 mb-12 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-                    فريقنا مستعد لتحويل فكرتك إلى واقع. دعنا نبدأ بنقاش قصير حول أهدافك.
-                </p>
-                <a href="/contact" class="inline-flex px-12 py-5 bg-white text-blue-900 rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-2xl font-bold text-lg items-center gap-3">
-                    تواصل معنا الآن
-                    <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    </span>
-                </a>
-            </div>
-        </section>
-    </main>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold mb-8 animate-fade-in-up"
+        >
+          <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+          متاحين لاستقبال مشاريع جديدة
+        </div>
 
-    <Footer />
+        <h1
+          class="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight animate-fade-in-up animation-delay-100"
+        >
+          نحول الأفكار إلى <br class="hidden md:block" />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"
+            >تجارب رقمية مذهلة</span
+          >
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200"
+        >
+          شريكك التقني لبناء حلول برمجية متطورة. نجمع بين الإبداع الفني والهندسة
+          الدقيقة لتقديم منتجات تترك أثراً.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a
+            href="/contact"
+            class="px-10 py-4 bg-gray-900 text-white rounded-full hover:bg-black transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/20 font-bold text-lg flex items-center justify-center gap-2 group"
+          >
+            ناقش مشروعك
+            <svg
+              class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg
+            >
+          </a>
+          <a
+            href="/projects"
+            class="px-10 py-4 bg-white text-gray-800 border border-gray-200 rounded-full hover:bg-gray-50 transition-all hover:border-gray-300 font-bold text-lg shadow-sm hover:shadow-md"
+          >
+            استكشف أعمالنا
+          </a>
+        </div>
+
+        <!-- Trust Badges (Mock) -->
+        <div
+          class="mt-20 pt-10 border-t border-gray-200/60 animate-fade-in-up animation-delay-400"
+        >
+          <p
+            class="text-sm text-gray-400 font-medium mb-6 uppercase tracking-widest"
+          >
+            نعمل بأحدث التقنيات
+          </p>
+          <div
+            class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
+          >
+            <!-- Simple Text Logos for Tech Stack -->
+            <span
+              class="font-bold text-2xl text-slate-600 flex items-center gap-2"
+              ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
+                ><path
+                  d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"
+                ></path></svg
+              > React</span
+            >
+            <span
+              class="font-bold text-2xl text-slate-600 flex items-center gap-2"
+              ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
+                ><path
+                  d="M12 2L2 19.778h20L12 2zm0 3.778L18.889 17.556H5.111L12 5.778z"
+                ></path></svg
+              > Next.js</span
+            >
+            <span
+              class="font-bold text-2xl text-slate-600 flex items-center gap-2"
+              ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
+                ><path
+                  d="M12 21.5c-5.24 0-9.5-4.26-9.5-9.5S6.76 2.5 12 2.5 21.5 6.76 21.5 12 17.24 21.5 12 21.5z"
+                ></path></svg
+              > Sanity</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -- Redesigned Cards -->
+    <section class="py-32 bg-white relative">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            حلول تُناسب طموحك
+          </h2>
+          <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+            نركز على الجودة والأداء لتقديم منتجات تعيش طويلاً وتنمو مع أعمالك.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            services.map((service) => (
+              <div class="group p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 border border-slate-100 hover:border-blue-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/50 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150" />
+
+                <div class="relative z-10">
+                  <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300 text-3xl border border-slate-100">
+                    {service.icon === "globe" && "🌐"}
+                    {service.icon === "smartphone" && "📱"}
+                    {service.icon === "pen-tool" && "✨"}
+                  </div>
+
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p class="text-slate-600 leading-relaxed text-lg">
+                    {service.description}
+                  </p>
+
+                  <div class="mt-8 pt-8 border-t border-slate-100 flex items-center text-blue-600 font-semibold group-hover:translate-x-1 transition-transform cursor-pointer">
+                    <span>اعرف المزيد</span>
+                    <svg
+                      class="w-4 h-4 mr-2 rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-blue-900">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900"
+        >
+        </div>
+        <!-- Abstract patterns -->
+        <div
+          class="absolute top-0 left-0 w-full h-full opacity-10"
+          style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 30px 30px;"
+        >
+        </div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h2
+          class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight"
+        >
+          هل لديك مشروع مميز؟
+        </h2>
+        <p
+          class="text-blue-100 mb-12 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
+        >
+          فريقنا مستعد لتحويل فكرتك إلى واقع. دعنا نبدأ بنقاش قصير حول أهدافك.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex px-12 py-5 bg-white text-blue-900 rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-2xl font-bold text-lg items-center gap-3"
+        >
+          تواصل معنا الآن
+          <span
+            class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg
+            >
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Layout>
